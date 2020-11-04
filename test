@@ -1,1 +1,85 @@
 curl -v https://staging.disasterassistance.gov/DAC/?mobile=unL9HuS&direct=mw
+
+*   Trying 23.32.172.221...
+* TCP_NODELAY set
+* Connected to staging.disasterassistance.gov (23.32.172.221) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*   CAfile: /etc/pki/tls/certs/ca-bundle.crt
+  CApath: none
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS handshake, [no content] (0):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, [no content] (0):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, [no content] (0):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, [no content] (0):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, [no content] (0):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use h2
+* Server certificate:
+*  subject: C=US; ST=District Of Columbia; L=Washington; O=Department of Homeland Security; CN=edit-wcms-testint.dhs.gov
+*  start date: Aug 27 00:00:00 2020 GMT
+*  expire date: Oct  7 12:00:00 2021 GMT
+*  subjectAltName: host "staging.disasterassistance.gov" matched cert's "staging.disasterassistance.gov"
+*  issuer: C=US; O=DigiCert Inc; OU=www.digicert.com; CN=GeoTrust RSA CA 2018
+*  SSL certificate verify ok.
+* Using HTTP2, server supports multi-use
+* Connection state changed (HTTP/2 confirmed)
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+* TLSv1.3 (OUT), TLS app data, [no content] (0):
+* TLSv1.3 (OUT), TLS app data, [no content] (0):
+* TLSv1.3 (OUT), TLS app data, [no content] (0):
+* Using Stream ID: 1 (easy handle 0x5648fee3a740)
+* TLSv1.3 (OUT), TLS app data, [no content] (0):
+> GET /DAC/?mobile=unL9HuS HTTP/2
+> Host: staging.disasterassistance.gov
+> User-Agent: curl/7.61.1
+> Accept: */*
+>
+* TLSv1.3 (IN), TLS handshake, [no content] (0):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS handshake, [no content] (0):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS app data, [no content] (0):
+* Connection state changed (MAX_CONCURRENT_STREAMS == 100)!
+* TLSv1.3 (OUT), TLS app data, [no content] (0):
+* TLSv1.3 (IN), TLS app data, [no content] (0):
+< HTTP/2 200
+< server: Apache/2.4.6 (Red Hat Enterprise Linux)
+< content-length: 380
+< content-type: text/html;charset=windows-1252
+< expires: Wed, 04 Nov 2020 14:58:32 GMT
+< cache-control: max-age=0, no-cache, no-store
+< pragma: no-cache
+< date: Wed, 04 Nov 2020 14:58:32 GMT
+< set-cookie: DAC-TDL12C-PUBLIC-SESSION-ID=CCWTxD2GOjBN0QNhk3cgQ-C1MO3WgjCqY9l01AtyecGpLNPKAgVq!2074968393!1548776996; path=/; HttpOnly
+< set-cookie: disaster_staging_web=348408330.24862.0000; path=/; Httponly; Secure
+< set-cookie: mobilewcms=unL9HuS; path=/
+< strict-transport-security: max-age=31536000 ; includeSubDomains
+<
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
+    <title>FEMA-IAC</title>
+  </head>
+  <body>
+    <noscript>
+      <h1>JavaScript is required to use this site. Please enable JavaScript to continue.</h1>
+    </noscript>
+
+        <script type="text/javascript">
+                window.location='PublicHome.do';
+</script></body>
+* Connection #0 to host staging.disasterassistance.gov left intact
+</html>[root@milkyway ~]#
+
+
