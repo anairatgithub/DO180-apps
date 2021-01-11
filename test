@@ -1,17 +1,14 @@
-#!/bin/sh
-
-
-tmux -f /home/ba.ad.ssa.gov/405135/work/tmux/tmux.conf att -t director || \
-      tmux -f /home/ba.ad.ssa.gov/405135/work/tmux/tmux.conf new -s director \; \
-      new-window -n Dev \; \
-         send-keys 'set -o vi' C-m 'while true ; do printf "\0"; sleep 240; done &' C-m \; \
-      new-window -n Prod_NSC \; \
-         send-keys 'set -o vi' C-m 'while true ; do printf "\0"; sleep 240; done &' C-m  \; \
-      new-window -n Prod_SSC \; \
-         send-keys 'set -o vi' C-m 'while true ; do printf "\0"; sleep 240; done &' C-m  \; \
-      new-window -n Test \; \
-         send-keys 'set -o vi' C-m 'while true ; do printf "\0"; sleep 240; done &' C-m  \; \
-      select-window -t Dev
-      
-#new-window -n nsc-prd-osp-director-01.is.cl.ssa.gov "ssh -i /home/ba.ad.ssa.gov/405135/.ssh/id_rsa 405135@ba.ad.ssa.gov@nsc-prd-osp-director-01.is.cl.ssa.gov" \; \
-#send-keys 'set -o vi' C-m 'while true ; do printf "\0"; sleep 240; done &' C-m 'sudo -i' C-m \; \
+" Cursor to yellow on insert mode
+" Blue on command/other mode
+" Note the use of hex codes (ie 3971ED)
+if exists('$TMUX')
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\033]Pl3971ED\033\\"
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\033]PlFBA922\033\\"
+    silent !echo -ne "\<Esc>Ptmux;\<Esc>\033]Pl3971ED\033\\"
+    autocmd VimLeave * silent !echo -ne "\<Esc>Ptmux;\<Esc>\033]Pl3971ED\033\\"
+else
+    let &t_EI = "\033]Pl3971ED\033\\"
+    let &t_SI = "\033]PlFBA922\033\\"
+    silent !echo -ne "\033]Pl3971ED\033\\"
+    autocmd VimLeave * silent !echo -ne "\033]Pl3971ED\033\\"
+endif
